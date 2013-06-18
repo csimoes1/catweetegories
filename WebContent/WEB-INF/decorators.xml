@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/decorators">
+    <decorator name="base-layout" page="base-layout.jsp">
+    		<!-- Don't decorate these -->
+    		<excludes>
+					<pattern>/assets/js/*</pattern>
+					<pattern>/assets/css/*</pattern>
+					<pattern>/assets/images/*</pattern>
+					<pattern>/servlet/*</pattern>
+				</excludes>
+        <pattern>/*</pattern>
+    </decorator>
+</decorators>

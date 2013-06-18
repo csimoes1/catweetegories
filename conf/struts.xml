@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+		<!-- Keep struts.enable.DynamicMethodInvocation set to false for security -csimoes -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+<!-- struts.devMode MUST be set to false in production or performance will suck. -->    
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+    <constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+<!-- 
+		<constant name="struts.patternMatcher" value="regex" />		
+		<constant name="struts.patternMatcher" value="namedVariable"/>
+		<constant name="struts.action.excludePattern" value=".*unfiltered.*,.*\\.nofilter"/>		
+		-->
+		<!-- you can add more things to the exclude pattern by separating them with commas -->
+<!-- excludes pattern did not seem to work :-( -->		
+		<constant name="struts.action.excludePattern" value="login"/>		
+		
+    <package name="default" namespace="" extends="struts-default">
+
+        <default-action-ref name="index" />
+
+        <global-results>
+            <result name="error">pages/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+<!-- 
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">DummyAction</param>
+                <param name="namespace">/org/simoes/action</param>
+            </result>
+        </action>
+ -->
+        <action name="index" class="org.simoes.action.SplashPageAction">
+<!--      
+	        <result>index.jsp</result>
+ -->
+					<result>pages/splashPage.jsp</result>
+        </action>
+        <action name="about" class="org.simoes.action.SplashPageAction">
+					<result>pages/about.jsp</result>
+        </action>
+        <action name="showTweets" class="org.simoes.action.TwitterAction">
+            <result name="success">pages/showTweets.jsp</result>
+            <result name="login" type="redirect">
+						  <param name="location">/</param>
+            </result>
+        </action>
+        <!-- Alternate View that allows you to drill down by Category first -->
+        <action name="categories" class="org.simoes.action.TwitterAction">
+            <result name="success">pages/categoryView.jsp</result>
+            <result name="login" type="redirect">
+						  <param name="location">/</param>
+            </result>
+        </action>
+        <action name="showCategory" class="org.simoes.action.TwitterAction">
+            <result name="success">pages/showCategory.jsp</result>
+            <result name="login" type="redirect">
+						  <param name="location">/</param>
+            </result>
+        </action>
+        <action name="recategorize" class="org.simoes.action.Recategorize">
+            <result name="success">pages/emptyPage.jsp</result>
+        </action>
+
+    </package>
+<!-- 
+    <include file="test.xml"/>
+-->
+    <!-- Add packages here -->
+
+</struts>
