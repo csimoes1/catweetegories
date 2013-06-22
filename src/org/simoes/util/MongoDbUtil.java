@@ -186,4 +186,38 @@ public class MongoDbUtil {
 			db.requestDone();
 		}
 	}
+
+	/**
+	 * Loads all the StatusPluses for the given user
+	 * @param collName
+	 * @param limit
+	 * @return
+	 * @throws TwitterException
+	 */
+	public SortedSet<StatusPlus> loadAllStatusPlusesForUser(TwitterUser twitterUser, String collName, int limit) throws TwitterException {
+		TreeSet<StatusPlus> result = new TreeSet<StatusPlus>();
+		DB db = client.getDB(DB);
+		db.requestStart();
+		try {
+			DBCollection coll = db.getCollection(collName);
+			BasicDBObject query = new BasicDBObject(FIELD_USER_ID, twitterUser.getId());
+			DBCursor dbCursor = null;
+			if(limit <= 0) {
+				dbCursor = coll.find(query); 
+			} else {
+				dbCursor = coll.find(query).limit(limit); 
+			}
+			
+			while(dbCursor.hasNext()) {
+				DBObject obj = dbCursor.next();
+				StatusPlus sp = new StatusPlus(obj);
+				result.add(sp);
+			}
+
+			return result;
+		} finally {
+			db.requestDone();
+		}
+	}
+
 }

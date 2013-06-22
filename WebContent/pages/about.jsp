@@ -26,6 +26,7 @@
 	        		<li><a href="http://nlp.stanford.edu/software/index.shtml">Stanford Natural Language Processing Group's CoreNLP</a></li>
 	        		<li><a href="http://twitter4j.org/en/index.html">Twitter4J</a></li>
 	        		<li><a href="http://www.mongodb.org/">MongoDB</a></li>
+	        		<li><a href="http://glyphicons.com/">Glyphicons</a></li>
 	        	</ul>
           </div>
 				</div>

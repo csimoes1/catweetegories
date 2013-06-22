@@ -8,7 +8,8 @@
 .personal { background-color: #FCF8E3 } 
 .sports { background-color: #B6FFBA } 
 .technology { background-color: #E6E6E6 } 
-.other { background-color: #FFFFFF } 
+.other { background-color: #FFFFFF }
+
 .btn-business {
   color: #000000;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);

@@ -96,7 +96,7 @@ public class TwitterAction extends ActionSupport implements SessionAware {
     private List<StatusPlus> getClassifiedStatuses(Twitter twitter, TwitterUser twitterUser) throws TwitterException {
     	// tweets already in MongoDB
     	SortedSet<StatusPlus> fromDatabase = 
-    			MongoDbUtil.getInstance().loadAllStatusPluses(MongoDbUtil.COLL_STATUS, TWITTER_DB_LOAD_SIZE); 
+    			MongoDbUtil.getInstance().loadAllStatusPlusesForUser(twitterUser, MongoDbUtil.COLL_STATUS, TWITTER_DB_LOAD_SIZE); 
     	List<StatusPlus> addToDatabase = new ArrayList<StatusPlus>(); // tweets we need to add to MongoDB
 		TweetClassifier tc = Classifier.getInstance();
     	

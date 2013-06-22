@@ -2,6 +2,8 @@ package org.simoes.common;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.simoes.classify.Category;
 import org.simoes.util.MongoDbUtil;
@@ -23,6 +25,11 @@ public class StatusPlus implements Comparable<StatusPlus>, Serializable {
 	private Long userId;
 	private Date recatDate;
 	private boolean userCategorized;
+	private static Pattern PATTERN_HTTP;
+	
+	static {
+		PATTERN_HTTP = Pattern.compile("(http[s]?://\\S+)");
+	}
 	
 	public StatusPlus() {
 		super();
@@ -92,6 +99,22 @@ public class StatusPlus implements Comparable<StatusPlus>, Serializable {
 		this.userCategorized = userCategorized;
 	}
 
+	/**
+	 * Returns the HTML for our Status including linkable URL's
+	 * @return
+	 */
+	public String getStatusHTML() {
+		StringBuilder result = new StringBuilder();
+		result.append("<p class='status-text'>");
+		if(null != status) {
+			String temp = status.getText();
+			String text = linkifyText(status, temp);
+			result.append(text);
+		}
+		result.append("</p>");
+		return result.toString();
+	}
+	
 	/**
 	 * outputs this object in MongoDB's DBObject format
 	 * @return
@@ -163,4 +186,29 @@ public class StatusPlus implements Comparable<StatusPlus>, Serializable {
 		return 0;
 	}
 	
+	/**
+	 * If we find any "http(s)://" in our text turn then into links
+	 * @param s
+	 * @param t
+	 * @return
+	 */
+	public String linkifyText(Status s, String t) {
+		Matcher m = PATTERN_HTTP.matcher(t);
+		StringBuffer sb = new StringBuffer();
+		while (m.find()) {
+			m.appendReplacement(sb, "<a href='$" + 1 + "' target='_blank'>$" + 1 + "</a>");
+		}
+		m.appendTail(sb);
+		return sb.toString();
+	}
+	
+	public static void main(String args[]) {
+		String a = "Check out http://t.co/0eGy8oyaSP or http://t.co/0zWv2zOPyN";
+		
+		StatusPlus sp = new StatusPlus();
+		
+		String aResult = sp.linkifyText(null, a);
+		System.out.println(aResult);
+		
+	}
 }

@@ -20,13 +20,39 @@
 			<s:iterator status="stat" value="statuses">
       <div class="row-fluid show-grid tweet-padding">
       		<!-- Tweet id is the id of this DIV -->
-	        <div class="span7 ${category.name}" id="${status.id}">
+	        <div class="span5" id="${status.id}">
 						<div class="media">
 						  <a class="pull-left" href="#">
-						    <img class="media-object" src="${status.user.profileImageURL}">
+						    <img class="media-object img-rounded" src="${status.user.profileImageURL}">
 						  </a>
 						  <div class="media-body">
-									<p>${status.text}</p>
+								${statusHTML}
+									<div class="span12" id="tweet-actions">
+										<span id="reply-span">
+											<a href="https://twitter.com/intent/tweet?in_reply_to=${status.id}">
+											<img src="assets/image/reply.png" />
+											Reply
+											</a>
+										</span>
+										<span id="retweet-span">
+											<a href="https://twitter.com/intent/retweet?tweet_id=${status.id}">
+											<img src="assets/image/retweet.png" />
+											Retweet
+											</a>
+										</span>
+										<span id="favorite-span">
+											<a href="https://twitter.com/intent/favorite?tweet_id=${status.id}">
+											<img src="assets/image/favorite.png" />
+											Favorite
+											</a>
+										</span>
+										<span id="reclassify-span">
+											<a href="https://twitter.com/intent/favorite?tweet_id=${status.id}">
+											<i class="icon-th-large"></i>
+											Reclassify
+											</a>
+										</span>
+									</div>
 						  <!-- 
 						    <h4 class="media-heading">Media heading</h4>
 						     -->

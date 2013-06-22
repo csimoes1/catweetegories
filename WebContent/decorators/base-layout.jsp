@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,11 +43,16 @@
           <p class="brand">Catweetegories</p>
 <!--            <a class="brand" href="/">Catweetegories</a>  -->
           <div class="nav-collapse collapse">
-<!--           
+
             <p class="navbar-text pull-right">
+            	<c:if test="${sessionScope.twitterUser != null}">
+            	<a href="logout" class="navbar-link">Logout</a>
+            	</c:if>
+<!--             
               Logged in as <a href="#" class="navbar-link">Username</a>
+ -->              
             </p>
- -->            
+
             <ul class="nav">
               <li class="active"><a href="index">Login</a></li>
               <li><a href="categories">Categories</a></li>
@@ -79,5 +85,7 @@
     <script src="../assets/js/bootstrap-typeahead.js"></script>
     <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/generated.js"></script>
+    <!-- Twitter web intents script -->
+    <script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
   </body>
 </html>
