@@ -4,12 +4,10 @@
 .business { background-color: #D1F5FF } 
 .entertainment { background-color: #F2B7B7 } 
 .food { background-color: #FFFBAF } 
-.health { background-color: #DFF0D8 } 
-.personal { background-color: #FCF8E3 } 
+.health { background-color: #9966CC } 
 .sports { background-color: #B6FFBA } 
 .technology { background-color: #E6E6E6 } 
-.other { background-color: #FFFFFF }
-
+.other { background-color: #FFFFFF } 
 .btn-business {
   color: #000000;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -61,33 +59,17 @@
 .btn-health {
   color: #000000;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #DFF0D8;
-  *background-color: #DFF0D8;
-  background-image: -moz-linear-gradient(top, #DFF0D8, #DFF0D8);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#DFF0D8), to(#DFF0D8));
-  background-image: -webkit-linear-gradient(top, #DFF0D8, #DFF0D8);
-  background-image: -o-linear-gradient(top, #DFF0D8, #DFF0D8);
-  background-image: linear-gradient(to bottom, #DFF0D8, #DFF0D8);
+  background-color: #9966CC;
+  *background-color: #9966CC;
+  background-image: -moz-linear-gradient(top, #9966CC, #9966CC);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#9966CC), to(#9966CC));
+  background-image: -webkit-linear-gradient(top, #9966CC, #9966CC);
+  background-image: -o-linear-gradient(top, #9966CC, #9966CC);
+  background-image: linear-gradient(to bottom, #9966CC, #9966CC);
   background-repeat: repeat-x;
-  border-color: #DFF0D8 #DFF0D8 #DFF0D8;
+  border-color: #9966CC #9966CC #9966CC;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffDFF0D8', endColorstr='#ffDFF0D8', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-}
-.btn-personal {
-  color: #000000;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #FCF8E3;
-  *background-color: #FCF8E3;
-  background-image: -moz-linear-gradient(top, #FCF8E3, #FCF8E3);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FCF8E3), to(#FCF8E3));
-  background-image: -webkit-linear-gradient(top, #FCF8E3, #FCF8E3);
-  background-image: -o-linear-gradient(top, #FCF8E3, #FCF8E3);
-  background-image: linear-gradient(to bottom, #FCF8E3, #FCF8E3);
-  background-repeat: repeat-x;
-  border-color: #FCF8E3 #FCF8E3 #FCF8E3;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffFCF8E3', endColorstr='#ffFCF8E3', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9966CC', endColorstr='#ff9966CC', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 .btn-sports {

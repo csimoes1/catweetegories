@@ -13,20 +13,15 @@
 </head>
 	<body>
 
-    <div class="container-fluid">
+    <div class="container">
       <h2>${twitterUser.screenName} tweets</h2>
       <div class="row-fluid">
       	<div class="span12">
  					<div class="btn-group">
-							<button class="btn btn-business">Business</button>
-							<button class="btn btn-entertainment">Entertainment</button>
-							<button class="btn btn-food">Food</button>
-							<button class="btn btn-health">Health</button>
-							<button class="btn btn-personal">Personal</button>
-							<button class="btn btn-sports">Sports</button>
-							<button class="btn btn-technology">Technology</button>
-							<button class="btn btn-other">Other</button>
-							<button class="btn btn-all">All</button>
+						<s:iterator status="cat" value="categories">
+							<button class="btn btn-${name}">${displayName}</button>
+						</s:iterator>
+						<button class="btn btn-all">All</button>
 					</div>
 				</div>
       	<div class="span12">
@@ -34,38 +29,48 @@
 			</div>
 			<!-- Output tweets here -->
 			<s:iterator status="stat" value="statuses">
-      <div class="row-fluid show-grid tweet-padding">
+      <div class="row show-grid tweet-padding">
       		<!-- Tweet id is the id of this DIV -->
-	        <div class="span7 ${category.name}" id="${status.id}">
+	        <div class="span5 ${category.name}" id="${status.id}">
 						<div class="media">
 						  <a class="pull-left" href="#">
-						    <img class="media-object" src="${status.user.profileImageURL}">
+						    <img class="media-object img-rounded" src="${status.user.profileImageURL}">
 						  </a>
 						  <div class="media-body">
-									<p>${status.text}</p>
-						  <!-- 
-						    <h4 class="media-heading">Media heading</h4>
-						     -->
+								${statusHTML}
+									<div class="span12" id="tweet-actions">
+											<a href="https://twitter.com/intent/tweet?in_reply_to=${status.id}">
+											<img src="assets/image/reply.png" />
+											Reply
+											</a>
+											<a href="https://twitter.com/intent/retweet?tweet_id=${status.id}">
+											<img src="assets/image/retweet.png" />
+											Retweet
+											</a>
+											<a href="https://twitter.com/intent/favorite?tweet_id=${status.id}">
+											<img src="assets/image/favorite.png" />
+											Favorite
+											</a>
 						  </div>
 						</div>	        
 					</div>
+				</div>
+
+				<div class="span2 dropdown">
+						
+						<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/showTweets">
+							<i class="icon-th-large"></i>
+							Recategorize
+						</a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+						<s:iterator status="cat" value="categories">
+							<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="recategorize">${displayName}</a></li>
+						</s:iterator>
+						</ul>
+				</div>
 	
-	        <div class="span2">
-							<div class="dropdown">
-								<a class="dropdown-toggle" id="dLabel" role="button"
-										data-toggle="dropdown" data-target="#" href="/showTweets">
-										Recategorize <b class="caret"></b>
-								</a>
-								<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-								<s:iterator status="cat" value="categories">
-									<li><a href="#" class="recategorize">${name}</a></li>
-								</s:iterator>
-								</ul>
-							</div>
-					</div>
-	        <div class="span3">
-					</div>
 			</div><!-- end of row-fluid -->
+			
 			</s:iterator>
 		</div><!-- end of container -->
   </script>

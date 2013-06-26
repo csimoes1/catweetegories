@@ -7,7 +7,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().hide();
 		$('.food').parent().hide();
 		$('.health').parent().hide();
-		$('.personal').parent().hide();
 		$('.sports').parent().hide();
 		$('.technology').parent().hide();
 		$('.other').parent().hide();
@@ -17,7 +16,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().show();
 		$('.food').parent().hide();
 		$('.health').parent().hide();
-		$('.personal').parent().hide();
 		$('.sports').parent().hide();
 		$('.technology').parent().hide();
 		$('.other').parent().hide();
@@ -27,7 +25,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().hide();
 		$('.food').parent().show();
 		$('.health').parent().hide();
-		$('.personal').parent().hide();
 		$('.sports').parent().hide();
 		$('.technology').parent().hide();
 		$('.other').parent().hide();
@@ -37,17 +34,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().hide();
 		$('.food').parent().hide();
 		$('.health').parent().show();
-		$('.personal').parent().hide();
-		$('.sports').parent().hide();
-		$('.technology').parent().hide();
-		$('.other').parent().hide();
-	});
-	$('.btn-personal').click(function() {
-		$('.business').parent().hide();
-		$('.entertainment').parent().hide();
-		$('.food').parent().hide();
-		$('.health').parent().hide();
-		$('.personal').parent().show();
 		$('.sports').parent().hide();
 		$('.technology').parent().hide();
 		$('.other').parent().hide();
@@ -57,7 +43,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().hide();
 		$('.food').parent().hide();
 		$('.health').parent().hide();
-		$('.personal').parent().hide();
 		$('.sports').parent().show();
 		$('.technology').parent().hide();
 		$('.other').parent().hide();
@@ -67,7 +52,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().hide();
 		$('.food').parent().hide();
 		$('.health').parent().hide();
-		$('.personal').parent().hide();
 		$('.sports').parent().hide();
 		$('.technology').parent().show();
 		$('.other').parent().hide();
@@ -77,7 +61,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().hide();
 		$('.food').parent().hide();
 		$('.health').parent().hide();
-		$('.personal').parent().hide();
 		$('.sports').parent().hide();
 		$('.technology').parent().hide();
 		$('.other').parent().show();
@@ -87,7 +70,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().show();
 		$('.food').parent().show();
 		$('.health').parent().show();
-		$('.personal').parent().show();
 		$('.sports').parent().show();
 		$('.technology').parent().show();
 		$('.other').parent().show();
@@ -97,7 +79,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().show();
 		$('.food').parent().show();
 		$('.health').parent().show();
-		$('.personal').parent().show();
 		$('.sports').parent().show();
 		$('.technology').parent().show();
 		$('.other').parent().show();
@@ -107,7 +88,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().show();
 		$('.food').parent().show();
 		$('.health').parent().show();
-		$('.personal').parent().show();
 		$('.sports').parent().show();
 		$('.technology').parent().show();
 		$('.other').parent().show();
@@ -117,7 +97,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().show();
 		$('.food').parent().show();
 		$('.health').parent().show();
-		$('.personal').parent().show();
 		$('.sports').parent().show();
 		$('.technology').parent().show();
 		$('.other').parent().show();
@@ -127,7 +106,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().show();
 		$('.food').parent().show();
 		$('.health').parent().show();
-		$('.personal').parent().show();
 		$('.sports').parent().show();
 		$('.technology').parent().show();
 		$('.other').parent().show();
@@ -137,7 +115,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().show();
 		$('.food').parent().show();
 		$('.health').parent().show();
-		$('.personal').parent().show();
 		$('.sports').parent().show();
 		$('.technology').parent().show();
 		$('.other').parent().show();
@@ -147,17 +124,6 @@ $(document).ready(function() {
 		$('.entertainment').parent().show();
 		$('.food').parent().show();
 		$('.health').parent().show();
-		$('.personal').parent().show();
-		$('.sports').parent().show();
-		$('.technology').parent().show();
-		$('.other').parent().show();
-	});
-	$('.btn-all').click(function() {
-		$('.business').parent().show();
-		$('.entertainment').parent().show();
-		$('.food').parent().show();
-		$('.health').parent().show();
-		$('.personal').parent().show();
 		$('.sports').parent().show();
 		$('.technology').parent().show();
 		$('.other').parent().show();
