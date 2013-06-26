@@ -15,8 +15,8 @@ public enum Category implements Serializable {
 	BUSINESS("business", "D1F5FF"),
 	ENTERTAINMENT("entertainment", "F2B7B7"),
 	FOOD("food", "FFFBAF"),
-	HEALTH("health", "DFF0D8"),
-	PERSONAL("personal", "FCF8E3"),
+	HEALTH("health", "9966CC"),
+//	PERSONAL("personal", "FCF8E3"),
 	SPORTS("sports", "B6FFBA"),
 	TECHNOLOGY("technology", "E6E6E6"),
 	OTHER("other", "FFFFFF");

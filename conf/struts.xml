@@ -48,6 +48,11 @@
         <action name="about" class="org.simoes.action.SplashPageAction">
 					<result>pages/about.jsp</result>
         </action>
+        <action name="logout" class="org.simoes.action.LogoutAction">
+            <result name="success" type="redirect">
+						  <param name="location">/</param>
+            </result>
+        </action>
         <action name="showTweets" class="org.simoes.action.TwitterAction">
             <result name="success">pages/showTweets.jsp</result>
             <result name="login" type="redirect">
