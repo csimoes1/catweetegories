@@ -75,6 +75,12 @@
         <action name="recategorize" class="org.simoes.action.Recategorize">
             <result name="success">pages/emptyPage.jsp</result>
         </action>
+        <action name="showTweetStats" class="org.simoes.action.ClassifierStatsAction">
+            <result name="success">pages/showTweetStats.jsp</result>
+            <result name="login" type="redirect">
+						  <param name="location">/</param>
+            </result>
+        </action>
 
     </package>
 <!-- 

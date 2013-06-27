@@ -27,7 +27,7 @@
 						  </a>
 						  <div class="media-body">
 								${statusHTML}
-									<div class="span12" id="tweet-actions">
+									<div id="tweet-actions">
 											<a href="https://twitter.com/intent/tweet?in_reply_to=${status.id}">
 											<img src="assets/image/reply.png" />
 											Reply
@@ -40,6 +40,11 @@
 											<img src="assets/image/favorite.png" />
 											Favorite
 											</a>
+											<span class="pull-right"> 
+											<a href="/showTweetStats?statusId=${status.id}">
+											<i class="icon-question-sign"></i> Stats
+											</a>
+											</span>
 						  </div>
 						</div>	        
 					</div>

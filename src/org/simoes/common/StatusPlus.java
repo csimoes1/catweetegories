@@ -1,17 +1,25 @@
 package org.simoes.common;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.simoes.classify.Category;
+import org.simoes.collect.LuceneTextUtils;
 import org.simoes.util.MongoDbUtil;
 
 import twitter4j.Status;
 import twitter4j.TwitterException;
 import twitter4j.json.DataObjectFactory;
 
+import com.google.common.base.CharMatcher;
 import com.google.common.base.Strings;
 import com.google.common.primitives.Longs;
 import com.mongodb.DBObject;
@@ -113,6 +121,19 @@ public class StatusPlus implements Comparable<StatusPlus>, Serializable {
 		}
 		result.append("</p>");
 		return result.toString();
+	}
+	
+	/**
+	 * Returns the text with StopWords removed and whitespace condensed
+	 * @return
+	 */
+	public String getClassifyText() {
+		String result = getStatus().getText();
+		// replace any white space characters in text with " "
+		result = CharMatcher.WHITESPACE.replaceFrom(result, " ");
+		// remove all stop words
+		result = LuceneTextUtils.getInstance().cleanText(result);
+		return result;
 	}
 	
 	/**

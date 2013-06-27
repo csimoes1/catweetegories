@@ -72,11 +72,7 @@ public class TrainingInfoCreator implements Runnable {
 	private void writeListToFile(List<StatusPlus> list, File outputFile) {
 		try(FileWriter fw = new FileWriter(outputFile)) {
 			for (StatusPlus sp : list) {
-				String trainText = sp.getStatus().getText();
-				// replace any white space characters in text with " "
-				trainText = CharMatcher.WHITESPACE.replaceFrom(trainText, " ");
-				// remove all stop words
-				trainText = LuceneTextUtils.getInstance().cleanText(trainText);
+				String trainText = sp.getClassifyText();
 				if(StringUtils.isNotBlank(trainText)) {
 					StringBuffer result = new StringBuffer();
 					result.append(sp.getCategory().getName());
