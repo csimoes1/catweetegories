@@ -19,32 +19,32 @@
 			<!-- Output tweets here -->
 			<s:iterator status="stat" value="statuses">
       <div class="row show-grid tweet-padding">
-      		<!-- Tweet id is the id of this DIV -->
-	        <div class="span5" id="${status.id}">
-						<div class="media">
-						  <a class="pull-left" href="#">
-						    <img class="media-object img-rounded" src="${status.user.profileImageURL}">
-						  </a>
-						  <div class="media-body">
-								${statusHTML}
-									<div id="tweet-actions">
-											<a href="https://twitter.com/intent/tweet?in_reply_to=${status.id}">
-											<img src="assets/image/reply.png" />
-											Reply
-											</a>
-											<a href="https://twitter.com/intent/retweet?tweet_id=${status.id}">
-											<img src="assets/image/retweet.png" />
-											Retweet
-											</a>
-											<a href="https://twitter.com/intent/favorite?tweet_id=${status.id}">
-											<img src="assets/image/favorite.png" />
-											Favorite
-											</a>
-											<span class="pull-right"> 
-											<a href="/showTweetStats?statusId=${status.id}">
-											<i class="icon-question-sign"></i> Stats
-											</a>
-											</span>
+    		<!-- Tweet id is the id of this DIV -->
+        <div class="span5" id="${status.id}">
+					<div class="media">
+					  <a class="pull-left" href="#">
+					    <img class="media-object img-rounded" src="${status.user.profileImageURL}">
+					  </a>
+					  <div class="media-body">
+							${statusHTML}
+							<div id="tweet-actions">
+								<a href="https://twitter.com/intent/tweet?in_reply_to=${status.id}">
+								<img src="assets/image/reply.png" />
+								Reply
+								</a>
+								<a href="https://twitter.com/intent/retweet?tweet_id=${status.id}">
+								<img src="assets/image/retweet.png" />
+								Retweet
+								</a>
+								<a href="https://twitter.com/intent/favorite?tweet_id=${status.id}">
+								<img src="assets/image/favorite.png" />
+								Favorite
+								</a>
+								<span class="pull-right"> 
+								<a href="/showTweetStats?statusId=${status.id}">
+								<i class="icon-question-sign"></i> Stats
+								</a>
+								</span>
 						  </div>
 						</div>	        
 					</div>

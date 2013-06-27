@@ -4,7 +4,7 @@
 .business { background-color: #D1F5FF } 
 .entertainment { background-color: #F2B7B7 } 
 .food { background-color: #FFFBAF } 
-.health { background-color: #9966CC } 
+.health { background-color: #9999FF } 
 .sports { background-color: #B6FFBA } 
 .technology { background-color: #E6E6E6 } 
 .other { background-color: #FFFFFF } 
@@ -59,17 +59,17 @@
 .btn-health {
   color: #000000;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #9966CC;
-  *background-color: #9966CC;
-  background-image: -moz-linear-gradient(top, #9966CC, #9966CC);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#9966CC), to(#9966CC));
-  background-image: -webkit-linear-gradient(top, #9966CC, #9966CC);
-  background-image: -o-linear-gradient(top, #9966CC, #9966CC);
-  background-image: linear-gradient(to bottom, #9966CC, #9966CC);
+  background-color: #9999FF;
+  *background-color: #9999FF;
+  background-image: -moz-linear-gradient(top, #9999FF, #9999FF);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#9999FF), to(#9999FF));
+  background-image: -webkit-linear-gradient(top, #9999FF, #9999FF);
+  background-image: -o-linear-gradient(top, #9999FF, #9999FF);
+  background-image: linear-gradient(to bottom, #9999FF, #9999FF);
   background-repeat: repeat-x;
-  border-color: #9966CC #9966CC #9966CC;
+  border-color: #9999FF #9999FF #9999FF;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9966CC', endColorstr='#ff9966CC', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9999FF', endColorstr='#ff9999FF', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 .btn-sports {
