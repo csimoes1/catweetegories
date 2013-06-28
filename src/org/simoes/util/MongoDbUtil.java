@@ -43,6 +43,7 @@ public class MongoDbUtil {
 	public static final String FIELD_NAME = "name";
 	public static final String FIELD_RECAT_DATE = "ct_recat_date";
 	public static final String FIELD_USER_ID = "ct_user_id";
+	public static final String FIELD_USER_SCREEN_NAME = "user.screen_name";
 	public static final String FIELD_SCREEN_NAME = "screenName";
 	
 
@@ -156,6 +157,33 @@ public class MongoDbUtil {
 		}
 	}
 
+	// use COLL_COLLECT for now
+	public StatusPlus loadLatestStatusPlusForUser(String collection, String screenName) {
+		StatusPlus result = null;
+		DB db = client.getDB(DB);
+		db.requestStart();
+		try {
+			DBCollection coll = db.getCollection(collection);
+			BasicDBObject query = new BasicDBObject(FIELD_USER_SCREEN_NAME, screenName);
+			BasicDBObject fields = new BasicDBObject();;
+			BasicDBObject orderBy = new BasicDBObject("id", -1);
+			
+			DBObject dbObject = coll.findOne(query, fields, orderBy);
+			if(null != dbObject) {
+				result = new StatusPlus(dbObject);
+			} else {
+				log.warning("Could not find screen name: " + screenName);
+			}
+			return result;
+		} catch(TwitterException e) {
+			// if an Exception occurs we probably don't have this screen name in the database
+			log.warning(e.getErrorMessage());
+			return result;
+		} finally {
+			db.requestDone();
+		}
+	}
+	
 	/**
 	 * Loads the number of StatusPluses specified by the limit parameter.  If limit is 0 then we return all results.
 	 * @param limit

@@ -10,7 +10,9 @@ import java.util.TreeMap;
 import java.util.logging.Logger;
 
 import org.simoes.classify.Category;
+import org.simoes.common.StatusPlus;
 import org.simoes.util.ConfigResources;
+import org.simoes.util.MongoDbUtil;
 import org.simoes.util.Twitter4jUtil;
 
 import twitter4j.Twitter;
@@ -117,9 +119,9 @@ public class CollectUserTweets implements Runnable {
 
 	public static void main(String args[]) {
 		ConfigResources.init();
-		
 		CollectUserTweets cut = new CollectUserTweets();
-		cut.setSkipToUserName("ETonlineAlert");
+		cut.setSkipToUserName("FoodNetwork");
 		cut.run();
+
 	}
 }

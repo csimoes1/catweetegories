@@ -56,6 +56,12 @@ public class Twitter4jUtil {
 	{
 		log.info("storeTweetsByUser called for: " + screenName);
 		Paging paging = new Paging(1, Constants.TWITTER_PAGE_SIZE);
+		StatusPlus latestUserSP = MongoDbUtil.getInstance().loadLatestStatusPlusForUser(MongoDbUtil.COLL_COLLECT, screenName);
+		if(latestUserSP != null) {
+			paging.setSinceId(latestUserSP.getStatus().getId());
+		}
+		// set this to the highest statusId we have for this user
+		//paging.setSinceId(sinceId);
 		for (int i = 1; i <= numberOfPages; i++) {
 	    	List<StatusPlus> statusPluses = new ArrayList<StatusPlus>();
 			paging.setPage(i);
