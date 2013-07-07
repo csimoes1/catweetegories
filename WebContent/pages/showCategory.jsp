@@ -22,10 +22,16 @@
     		<!-- Tweet id is the id of this DIV -->
         <div class="span5" id="${status.id}">
 					<div class="media">
-					  <a class="pull-left" href="#">
+					  <span class="pull-left" href="#">
 					    <img class="media-object img-rounded" src="${status.user.profileImageURL}">
-					  </a>
+					  </span>
 					  <div class="media-body">
+					  	<div>
+					  		<span class="large"><strong>${status.user.name}</strong></span>
+								<div class="pull-right">
+								<small><span id="created-date">${createdDate}</span></small>
+								</div>
+							</div>
 							${statusHTML}
 							<div id="tweet-actions">
 								<a href="https://twitter.com/intent/tweet?in_reply_to=${status.id}">

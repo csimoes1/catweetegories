@@ -81,14 +81,12 @@
 						  <param name="location">/</param>
             </result>
         </action>
-<!--         
         <action name="grade" class="org.simoes.action.GradeAction">
             <result name="success">pages/grade.jsp</result>
             <result name="login" type="redirect">
 						  <param name="location">/</param>
             </result>
         </action>
- -->
     </package>
 <!-- 
     <include file="test.xml"/>

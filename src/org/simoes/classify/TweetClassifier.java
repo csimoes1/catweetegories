@@ -96,7 +96,7 @@ public class TweetClassifier {
 		ColumnDataClassifier cdc = new ColumnDataClassifier("/Users/csimoes/workspace-juno/catweetegories/conf/training.properties");
 		
 		File trainFile = new File("/Users/csimoes/workspace-juno/catweetegories/conf/training.properties");
-		File classifyFile = new File("tweet.classifier");
+		File classifyFile = new File("tweet-2013-06-27.classifier");
 		TweetClassifier tc = new TweetClassifier(trainFile, classifyFile);
 		Collection labels = tc.getClassifier().labels();
 		for (Iterator iterator = labels.iterator(); iterator.hasNext();) {
@@ -120,6 +120,8 @@ public class TweetClassifier {
 		ClassifierStats cs = tc.getStatistics(text3);
 		System.out.println("scoreTable=" + cs.getScoringTable());
 		System.out.println("scoreTree=" + cs.getCategoryScores());
+		System.out.println("DUMP:");
+		tc.getClassifier().dump();
 		
 		
 //		ColumnDataClassifier cdc = new ColumnDataClassifier("tweet.classifier");

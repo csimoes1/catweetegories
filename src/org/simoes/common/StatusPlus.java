@@ -13,6 +13,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.simoes.classify.Category;
 import org.simoes.collect.LuceneTextUtils;
+import org.simoes.util.DateUtil;
 import org.simoes.util.MongoDbUtil;
 
 import twitter4j.Status;
@@ -134,6 +135,24 @@ public class StatusPlus implements Comparable<StatusPlus>, Serializable {
 		// remove all stop words
 		result = LuceneTextUtils.getInstance().cleanText(result);
 		return result;
+	}
+	
+	public String getCreatedDate() {
+		double createdAt = status.getCreatedAt().getTime();
+		double current = System.currentTimeMillis();
+		double diff = Math.floor((current-createdAt)/1000);
+	    if (diff <= 1) {return "just now";}
+	    if (diff < 20) {return diff + " seconds ago";}
+	    if (diff < 40) {return "half a minute ago";}
+	    if (diff < 60) {return "less than a minute ago";}
+	    if (diff <= 90) {return "one minute ago";}
+	    if (diff <= 3540) {return Math.round(diff / 60) + " minutes ago";}
+	    if (diff <= 5400) {return "1 hour ago";}
+	    if (diff <= 86400) {return Math.round(diff / 3600) + " hours ago";}
+	    if (diff <= 129600) {return "1 day ago";}
+	    if (diff < 604800) {return Math.round(diff / 86400) + " days ago";}
+	    if (diff <= 777600) {return "1 week ago";}
+	    return "on " + DateUtil.createDateString(status.getCreatedAt(), "MMM d HH:mm");
 	}
 	
 	/**

@@ -175,6 +175,8 @@ has
 have
 having
 he
+he's
+hes
 hello
 help
 hence
@@ -371,6 +373,8 @@ seven
 several
 shall
 she
+she's
+shes
 should
 since
 six

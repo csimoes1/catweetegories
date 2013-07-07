@@ -48,7 +48,7 @@ public class ClassifierStatsAction extends ActionSupport implements SessionAware
     	statusPlus = MongoDbUtil.getInstance().loadStatusPlus(statusId);
     	if(null != statusPlus) {
     		TweetClassifier tc = Classifier.getInstance();
-    		ClassifierStats cs = tc.getStatistics(statusPlus.getStatus().getText());
+    		ClassifierStats cs = tc.getStatistics(statusPlus.getClassifyText());
     		categoryScores = cs.getCategoryScores();
     		scoringTable = cs.getScoringTable();
     	}

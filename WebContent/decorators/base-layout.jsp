@@ -83,8 +83,8 @@
     <script src="../assets/js/bootstrap-collapse.js"></script>
     <script src="../assets/js/bootstrap-carousel.js"></script>
     <script src="../assets/js/bootstrap-typeahead.js"></script>
-    <script src="../assets/js/custom.js"></script>
     <script src="../assets/js/generated.js"></script>
+    <script src="../assets/js/custom.js"></script>
     <!-- Twitter web intents script -->
     <script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
   </body>
