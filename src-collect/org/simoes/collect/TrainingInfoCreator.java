@@ -29,7 +29,7 @@ import com.google.common.base.CharMatcher;
 public class TrainingInfoCreator implements Runnable {
 	static Logger log = Logger.getLogger(TrainingInfoCreator.class.getName());
 
-	private static String fileNamePrefix = "trainingData-";
+	private static String fileNamePrefix = "trainingData-random-";
 	private String fileNameTest;
 	private String fileNameTrain;
 	

@@ -120,7 +120,7 @@ public class CollectUserTweets implements Runnable {
 	public static void main(String args[]) {
 		ConfigResources.init();
 		CollectUserTweets cut = new CollectUserTweets();
-		cut.setSkipToUserName("FoodNetwork");
+		//cut.setSkipToUserName("FoodNetwork");
 		cut.run();
 
 	}
