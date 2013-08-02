@@ -11,11 +11,12 @@ To run you will need:
    - Go to your Tomcat home directory
    - cd to the directory "conf/Catalina/localhost"
    - create a file called "ROOT.xml" and put the following text into the file 
-<Context path="/catweetegories" reloadable="true"  
+
+&lt;Context path="/catweetegories" reloadable="true"  
          docBase="/Users/csimoes/workspace-juno/catweetegories/WebContent" 
          workDir="/Users/csimoes/workspace-juno/catweetegories/work" 
          debug="0" 
          privileged="true" 
-         allowLinking="true">
-</Context>
+         allowLinking="true"&gt;
+&lt;/Context&gt;
    - You will need to update the docBase and workDir parameters to match the locations of where you checked out the catweetegories project from GitHub 
