@@ -154,6 +154,7 @@ public class ConfigResources {
 
 		// if the log4j.file is not set, then no point in trying
 	    if(file != null) {
+	    	System.out.println(METHOD + " log4j file: " + file);
 	    	PropertyConfigurator.configureAndWatch(file, 5000);
 			log.warning(METHOD + "Log4j has been initialized.");
 			// Log some system settings

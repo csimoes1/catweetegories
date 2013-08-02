@@ -33,6 +33,7 @@ public class MongoDbUtil {
 	
 	public static final String DB = "catweetegories";
 	public static final String COLL_COLLECT = "collect";
+	public static final String COLL_LIFT = "lift";
 	public static final String COLL_STATUS = "statuses";
 	public static final String COLL_USER = "users";
 	public static final String FIELD_ACCESS_TOKEN = "accessToken";
